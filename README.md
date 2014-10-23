@@ -25,6 +25,8 @@ swf.define 'wait', (fn, fns...) ->
         expectations[i] = false
         f( (d) -> expectations[i] = true; check(i, d) )
 
+swf.createAlias('$')
+
 $.wait.extend
   then: (finish) ->
     this.$(finish)()
